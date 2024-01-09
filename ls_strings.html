@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <script src="https://exec-code.github.io/element.js"></script>
+    <!-- Add your CSS links or styles here -->
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            padding: 1em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            /* position: fixed; */
+            /* bottom: 0; */
+            width: 100%;
+        }
+
+        exec-code {
+            display: block;
+            width: 50vw;
+            margin: auto;   
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Website Name</h1>
+    </header>
+
+    <main>
+        <p>Hier ga je kennis maken met console.log en met strings!</p>
+    </main>
+    <exec-code autorun autoupdate runcode="1" editable>
+        <template>
+            <code locked>
+    // Strings zijn een reeks tekens, dit kunnen letters, cijfers, leestekens en andere speciale tekens bevatten
+    // Hieronder worden twee variablen aangewezen, en met console.log samen weergegeven. 
+    let firstName = "Steve ";
+    let lastName = "Wozniak";
+    console.log( firstName + lastName );
+            </code>
+            <code>                
+
+            </code>
+        </template>
+    </exec-code>
+
+    <exec-code autorun autoupdate runcode="2" editable>
+        <template>
+            <code>                
+    // Schrijf nu je eigen voor en achternaam in de console!
+    // Let op dat ze niet aan elkaar plakken, kijk goed naar het voorbeeld.
+    let firstName = "";
+    let lastName = "";
+    console.log(firstName + lastName);
+            </code>
+        </template>
+    </exec-code>
+
+    <exec-code autorun autoupdate runcode="1" editable>
+        <template>
+            <code locked>                
+                // Strings hebben verschillende eigenschappen, met .length kan de "lengte" van een string worden opgehaald.
+                // Als je verder gaat met programmeren zul je vaker met deze methods gaan werken.
+                let persoon = "Pieter"; 
+                console.log(persoon.length);
+            </code>
+        </template>
+    </exec-code>
+
+    <exec-code autorun autoupdate runcode="2" editable>
+        <template>
+            <code>                
+                // Maak 3 variablen aan, 
+            </code>
+        </template>
+    </exec-code>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

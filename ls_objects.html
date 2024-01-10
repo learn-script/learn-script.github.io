@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objects</title>
     <script src="https://exec-code.github.io/element.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <!-- Add your CSS links or styles here -->
     <style>
         /* Add your CSS styles here */
@@ -14,12 +15,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #667d9d ;
         }
 
         header {
             background-color: #333;
             color: #fff;
-            padding: 1em;
+            padding-top: 1em;
             text-align: center;
         }
 
@@ -37,6 +39,33 @@
             width: 100%;
         }
 
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* background-color: aqua; */
+        }
+
+        ul li {
+            float: left;
+            /* display: inline; */
+        }
+
+        ul li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            background-color: #667d9d ;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #282d35;
+        }
+
+
         exec-code {
             display: block;
             width: 50vw;
@@ -48,6 +77,18 @@
 <body>
     <header>
         <h1>Your Website Name</h1>
+
+        <ul>
+            <li><a href="ls_arrays.html">Arrays</a></li>
+            <li><a href="ls_booleans.html">Booleans</a></li>
+            <li><a href="ls_conditionals.html">Conditionals</a></li>
+            <li><a href="ls_functions.html">Functions</a></li>
+            <li><a href="ls_loops.html">Loops</a></li>
+            <li><a href="ls_numbers.html">Numbers</a></li>
+            <li><a href="ls_objects.html">Objects</a></li>
+            <li><a href="ls_strings.html">Strings</a></li>
+        </ul>
+
     </header>
 
     <main>

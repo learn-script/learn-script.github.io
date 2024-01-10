@@ -14,6 +14,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #667d9d ;
+            
         }
 
         header {
@@ -23,10 +25,29 @@
             text-align: center;
         }
 
-        main {
+        main h3 {
             padding: 1em;
             text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+
+        #div1 {
+            padding: 1em;
+            border: 1px solid #333;
+            background-color: #282d35;
+            width: 500px;
+            margin: auto;
+            text-align: left;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px 1px;
+        }
+
+        #div1 p {
+           color: #617c80; 
+        }
+
+
 
         footer {
             background-color: #333;
@@ -47,58 +68,69 @@
 </head>
 
 <body>
+
     <header>
-        <h1>Your Website Name</h1>
+        <h1>Strings en console.log</h1>
     </header>
 
     <main>
-        <p>Hier ga je kennis maken met console.log en met strings!</p>
+
+        <h3>Hier ga je kennis maken met console.log en met strings!</h3>
+    
+    <div id="div1">
+        <p>Met de opdrachten en voorbeelden hieronder kun je je eerste stappen zetten om te leren programmeren!
+            <br>Test test test
+            <br> lalalal
+        </p>
+    </div>
+        <exec-code autorun autoupdate runcode="1" editable>
+            <template>
+                <code locked>
+                    // Strings zijn een reeks tekens, dit kunnen letters, cijfers, leestekens en andere speciale tekens bevatten
+                    // Hieronder worden twee variablen aangewezen, en met console.log samen weergegeven. 
+                    // Strings staan altijd tussen aanhalingstekens, enkele of dubbele, dat maakt niet uit.
+                    let firstName = "Steve ";
+                    let lastName = 'Wozniak';
+                    console.log(firstName + lastName);
+                </code>
+                <code>                
+    
+                </code>
+            </template>
+        </exec-code>
+    
+        <exec-code autorun autoupdate runcode="2" editable>
+            <template>
+                <code>                
+                    // Schrijf nu je eigen voor en achternaam in de console!
+                    // Let op dat ze niet aan elkaar plakken, kijk goed naar het voorbeeld.
+                    let firstName = "";
+                    let lastName = "";
+                    console.log(firstName + lastName);
+                </code>
+            </template>
+        </exec-code>
+    
+        <exec-code autorun autoupdate runcode="1" editable>
+            <template>
+                <code locked>                
+                    // Strings hebben verschillende eigenschappen, met .length kan de "lengte" van een string worden opgehaald.
+                    // Als je verder gaat met programmeren zul je vaker met deze methods gaan werken.
+                    let persoon = "Pieter"; 
+                    console.log(persoon.length);
+                </code>
+            </template>
+        </exec-code>
+    
+        <exec-code autorun autoupdate runcode="2" editable>
+            <template>
+                <code>                
+                    // Maak 3 variablen aan, 
+                </code>
+            </template>
+        </exec-code>
+
     </main>
-    <exec-code autorun autoupdate runcode="1" editable>
-        <template>
-            <code locked>
-    // Strings zijn een reeks tekens, dit kunnen letters, cijfers, leestekens en andere speciale tekens bevatten
-    // Hieronder worden twee variablen aangewezen, en met console.log samen weergegeven. 
-    let firstName = "Steve ";
-    let lastName = "Wozniak";
-    console.log( firstName + lastName );
-            </code>
-            <code>                
-
-            </code>
-        </template>
-    </exec-code>
-
-    <exec-code autorun autoupdate runcode="2" editable>
-        <template>
-            <code>                
-    // Schrijf nu je eigen voor en achternaam in de console!
-    // Let op dat ze niet aan elkaar plakken, kijk goed naar het voorbeeld.
-    let firstName = "";
-    let lastName = "";
-    console.log(firstName + lastName);
-            </code>
-        </template>
-    </exec-code>
-
-    <exec-code autorun autoupdate runcode="1" editable>
-        <template>
-            <code locked>                
-                // Strings hebben verschillende eigenschappen, met .length kan de "lengte" van een string worden opgehaald.
-                // Als je verder gaat met programmeren zul je vaker met deze methods gaan werken.
-                let persoon = "Pieter"; 
-                console.log(persoon.length);
-            </code>
-        </template>
-    </exec-code>
-
-    <exec-code autorun autoupdate runcode="2" editable>
-        <template>
-            <code>                
-                // Maak 3 variablen aan, 
-            </code>
-        </template>
-    </exec-code>
 
     <footer>
         <p>&copy; 2023 Your Website Name. All rights reserved.</p>

@@ -1,0 +1,24 @@
+1 opdracht per pagina
+
+2 Duidelijker maken of je iets wel of niet kan editten 
+    execute knop uitzetten voor voorbeelden met class
+    
+3 Consequent zijn met quotes
+
+4 Opdrachten simpel houden bijv: zie string opdracht 1 '' 
+
+5 Kunnen bijhouden waar je bent gebleven in de tutorial (nice to have)
+
+6 Functies arrow functies houden voor geadvanceerde tutorial 
+
+7 Uitleggen in het begin verschillen: var let en const
+
+8 Houd in gedachten dat een beginner iets simpel moet kunnen maken
+
+9 Voorbeelden gebruiken (freecodecamp, codeacademy)
+
+10 Verschillende methods laten zien die makkelijk te begrijpen zijn bijv: alert() 
+
+################################
+Wat ziet de gebruiker voor het eerst?
+Wat gaan we als eerste leren?

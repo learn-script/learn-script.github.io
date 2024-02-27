@@ -1,0 +1,41 @@
+// takes tag and properties of object as argument
+// return a new object and assigns the wanted properties
+// function createElement(tag, props = {}) {
+//     return Object.assign(document.createElement(tag), props);
+// }
+
+// function createTag(tag) {
+//     return Object(document.createElement(tag));
+// }
+
+// class Home extends HTMLElement {
+//     constructor(input) {
+//         super();
+//         this.input = input;
+//         this.buildHeader(input);
+//     }
+
+//     buildHeader(input) {
+
+//         console.log('Dit werkt.');
+
+//         this.append(
+//             createTag('header')
+//         );// append
+//     }
+// }
+// customElements.define('home-page', Home);
+
+
+// const page = new Home();
+// const body = document.querySelector('body');
+
+// body.append(page);
+
+// const headerPNG = document.querySelector('header').appendChild(document.createElement('div'));
+//     headerPNG.id = 'wrapper';
+
+// const nav = headerPNG.appendChild(document.createElement('nav'));
+//     nav.appendChild(document.createElement('img')).setAttribute('src', 'roads-technology.png');
+//     const buttonWrapper = nav.appendChild(document.createElement('div'));
+//         buttonWrapper.append(document.createElement('button'));

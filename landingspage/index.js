@@ -19,6 +19,9 @@ const divContent = (content, target) => {
             buttonWrapper.id = 'buttonWrapper';
             const button = document.querySelector('#buttonWrapper button');
             button.innerText = 'Menu';
+        } else if (element === 'div' && target.id === 'welcome') {
+            const welcomeDiv = document.querySelector('#welcome');
+            welcomeDiv.append(document.createElement('div'));
         }
     });
 
@@ -41,6 +44,7 @@ const createStructure = () => {
 const headerStructure = (header) => {
     const structures = ['banner', 'welcome', 'info'];
     const bannerElements = ['img', 'div'];
+    const welcomeElements = ['div'];
 
     structures.forEach(structure => {
         const newDiv = document.createElement('div');
@@ -48,10 +52,15 @@ const headerStructure = (header) => {
         header.append(newDiv);
         switch (structure) {
             case 'banner':
-                const target = document.querySelector('#banner');
-                console.log(target);
-                divContent(bannerElements, target);
+                const bannerTarget = document.querySelector('#banner');
+                console.log(bannerTarget);
+                divContent(bannerElements, bannerTarget);
                 break;
+            case 'welcome': 
+                const welcomeTarget = document.querySelector('#welcome');
+                console.log(welcomeTarget);
+                divContent(welcomeElements, welcomeTarget);
+            
         }
 
     });

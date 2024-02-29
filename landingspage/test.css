@@ -2,14 +2,31 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #333;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
     color: #fff;
 }
 
 #banner {
+    width: 100%;
+}
+
+#welcome {
     display: flex;
+}
+
+#info {
+    display: flex;
+}
+
+#bannerNav {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 80px;
 }

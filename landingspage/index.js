@@ -4,10 +4,10 @@ root.id = 'root';
 app.append(root);
 
 // adds content to target elements
-const divContent = (content, target) => {
-    console.log(`Content in divContent: ${content}`);
+const bannerContent = (content, target) => {
+    console.log(`Content in bannerContent: ${content}`);
     content.forEach(element => {
-        console.log(`Elements in divContent :${element}`);
+        console.log(`Elements in bannerContent :${element}`);
         // banner content img
         if (element === 'img' && target.id === 'bannerNav') {
             const content = document.createElement(element);
@@ -23,16 +23,44 @@ const divContent = (content, target) => {
             buttonWrapper.id = 'buttonWrapper';
             const button = document.querySelector('#buttonWrapper button');
             button.innerText = 'Menu';
-            // welcome content
-        } else if (content[0] === 'image') {
-            content.forEach(id => {
-                const newDiv = document.createElement('div');
-                newDiv.id = id;
-                target.append(newDiv);
-            });
         }
     });
 
+};
+
+const welcomeImageContent = () => {
+    const imageDiv = document.querySelector('#image');
+    const placeholder = document.createElement('img');
+    placeholder.id = 'placeholder';
+    imageDiv.append(placeholder);
+    placeholder.setAttribute('src', 'placeholder.png');
+    console.log('dit werkt!');
+};
+
+const welcomeButtonContent = () => {
+    const buttonsDiv = document.querySelector('#buttons');
+    const wrapper = document.createElement('div');
+    wrapper.id = 'buttonWrapper';
+    buttonsDiv.append(wrapper);
+    console.log('dit werkt ook!');
+};
+
+const welcomeContent = (target) => {
+    const welcomeDivId = ['image', 'buttons'];
+    for (let i = 0; i < welcomeDivId.length; i++) {
+        const welcomeDiv = document.createElement('div')
+        target.append(welcomeDiv);
+        welcomeDiv.id = welcomeDivId[i];
+
+        switch (i) {
+            case 0:
+                welcomeImageContent();
+                break;
+            case 1:
+                welcomeButtonContent();
+                break;
+        }
+    }
 };
 
 // creates html tags and calls function to further add content to tags
@@ -50,29 +78,28 @@ const createStructure = () => {
 // creates elements and corresponding ID's 
 // for each element divContent() is called to futher add content to those elements
 const headerStructure = (header) => {
-    const structures = ['banner', 'welcome', 'info'];
+    const headerIDs = ['banner', 'welcome', 'info'];
     const bannerElements = ['img', 'div'];
-    const welcomeIDs = ['image', 'buttons'];
     const newNav = document.createElement('nav');
 
-    structures.forEach(structure => {
+    headerIDs.forEach(headerID => {
         const newDiv = document.createElement('div');
-        newDiv.id = structure;
-        newNav.id = 'bannerNav';
+        newDiv.id = headerID;
 
-        switch (structure) {
+        switch (headerID) {
             case 'banner':
                 header.append(newDiv);
                 newDiv.append(newNav);
+                newNav.id = 'bannerNav';
                 const bannerTarget = document.querySelector('#bannerNav');
                 console.log(bannerTarget);
-                divContent(bannerElements, bannerTarget);
+                bannerContent(bannerElements, bannerTarget);
                 break;
             case 'welcome':
                 header.append(newDiv);
                 const welcomeTarget = document.querySelector('#welcome');
+                welcomeContent(welcomeTarget);
                 console.log(welcomeTarget);
-                divContent(welcomeIDs, welcomeTarget);
                 break;
             case 'info':
                 header.append(newDiv);
@@ -82,8 +109,4 @@ const headerStructure = (header) => {
     });
 
 };
-
-// img.setAttribute('src', 'roads-technology.png');
-// banner.append(img, buttonWrapper);
-// buttonWrapper.append(button.innerText = 'Menu');
 createStructure();

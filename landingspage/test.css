@@ -16,6 +16,7 @@ header {
 
 #welcome {
     display: flex;
+    flex-direction: row;
 }
 
 #info {
@@ -29,4 +30,9 @@ header {
     margin: 0 auto;
     max-width: 1000px;
     height: 80px;
+}
+
+#placeholder {
+    max-width: 500px;
+    max-height: 500px; 
 }

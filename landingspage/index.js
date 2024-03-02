@@ -39,16 +39,42 @@ const welcomeImageContent = () => {
 
 const welcomeButtonContent = () => {
     const buttonsDiv = document.querySelector('#buttons');
+    const buttonText = document.createElement('h1');
     const wrapper = document.createElement('div');
-    wrapper.id = 'buttonWrapper';
-    buttonsDiv.append(wrapper);
+    const welcomeButton = document.createElement('button');
+
+    buttonText.innerText = 'Deze text moet nog aangepast worden!';
+    buttonText.id = 'buttonText';
+    wrapper.id = 'textButtonWrapper';
+    welcomeButton.innerText = 'Begin';
+
+    buttonsDiv.append(buttonText, wrapper);
+    wrapper.append(welcomeButton);
     console.log('dit werkt ook!');
 };
 
 const welcomeContent = (target) => {
     const welcomeDivId = ['image', 'buttons'];
     for (let i = 0; i < welcomeDivId.length; i++) {
-        const welcomeDiv = document.createElement('div')
+        const welcomeDiv = document.createElement('div');
+        target.append(welcomeDiv);
+        welcomeDiv.id = welcomeDivId[i];
+
+        switch (i) {
+            case 0:
+                welcomeImageContent();
+                break;
+            case 1:
+                welcomeButtonContent();
+                break;
+        }
+    }
+};
+
+const infoContent = (target) => {
+    const infoDivId = ['infoNav', 'listDiv'];
+    for (let i = 0; i < infoDivId.length; i++) {
+        const welcomeDiv = document.createElement('div');
         target.append(welcomeDiv);
         welcomeDiv.id = welcomeDivId[i];
 

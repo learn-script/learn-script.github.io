@@ -8,15 +8,24 @@ header {
     display: flex;
     flex-direction: column;
     color: #fff;
+    padding-top: 80px;
 }
 
 #banner {
     width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 #welcome {
     display: flex;
+    align-items: center;
     flex-direction: row;
+    gap: 80px;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0;
+    flex-grow: 1;
 }
 
 #info {
@@ -35,4 +44,30 @@ header {
 #placeholder {
     max-width: 500px;
     max-height: 500px; 
+}
+
+#image {
+    display: flex;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#buttonText {
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+#textButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#textButtonWrapper button {
+    width: 350px;
+    height: 40px;
 }

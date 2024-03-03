@@ -60,33 +60,35 @@ const welcomeContent = (target) => {
         target.append(welcomeDiv);
         welcomeDiv.id = welcomeDivId[i];
 
-        switch (i) {
-            case 0:
-                welcomeImageContent();
-                break;
-            case 1:
-                welcomeButtonContent();
-                break;
+        if (i === 0) {
+            welcomeImageContent();
+        } else {
+            welcomeButtonContent();
         }
     }
 };
 
 const infoContent = (target) => {
-    const infoDivId = ['infoNav', 'listDiv'];
-    for (let i = 0; i < infoDivId.length; i++) {
-        const welcomeDiv = document.createElement('div');
-        target.append(welcomeDiv);
-        welcomeDiv.id = welcomeDivId[i];
+    const infoNav = document.createElement('nav');
+    const testHeader = document.createElement('h2');
 
-        switch (i) {
-            case 0:
-                welcomeImageContent();
-                break;
-            case 1:
-                welcomeButtonContent();
-                break;
-        }
-    }
+    testHeader.innerText = 'test';
+
+    target.append(infoNav);
+    infoNav.append(testHeader);
+
+    // const infoDivId = ['infoNav', 'listDiv'];
+    // for (let i = 0; i < infoDivId.length; i++) {
+    //     const welcomeDiv = document.createElement('div');
+    //     target.append(welcomeDiv);
+    //     welcomeDiv.id = welcomeDivId[i];
+
+    //     if (i === 0) {
+    //         welcomeImageContent();
+    //     } else {
+    //         welcomeButtonContent();
+    //     }
+    // }
 };
 
 // creates html tags and calls function to further add content to tags
@@ -102,7 +104,7 @@ const createStructure = () => {
 };
 
 // creates elements and corresponding ID's 
-// for each element divContent() is called to futher add content to those elements
+// for each element a function is called to futher add content to those elements
 const headerStructure = (header) => {
     const headerIDs = ['banner', 'welcome', 'info'];
     const bannerElements = ['img', 'div'];
@@ -129,6 +131,8 @@ const headerStructure = (header) => {
                 break;
             case 'info':
                 header.append(newDiv);
+                const infoTarget = document.querySelector('#info');
+                infoContent(infoTarget);
                 break;
         }
 

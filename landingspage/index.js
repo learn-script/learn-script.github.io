@@ -14,6 +14,7 @@ const bannerContent = (content, target) => {
             target.append(content);
             const img = document.querySelector('#banner img');
             img.setAttribute('src', 'roads-technology.png');
+            img.id = 'roadsImg';
             // banner content button
         } else if (element === 'div' && target.id === 'bannerNav') {
             const content = document.createElement(element);
@@ -22,6 +23,7 @@ const bannerContent = (content, target) => {
             buttonWrapper.append(document.createElement('button'));
             buttonWrapper.id = 'buttonWrapper';
             const button = document.querySelector('#buttonWrapper button');
+            button.id = 'menuButton';
             button.innerText = 'Menu';
         }
     });
@@ -69,26 +71,45 @@ const welcomeContent = (target) => {
 };
 
 const infoContent = (target) => {
+    const infoDivContent = ['ul', 'li'];
+    const ulId = ['Intranet', 'MDN', 'W3schools'];
     const infoNav = document.createElement('nav');
-    const testHeader = document.createElement('h2');
+    const infoListDiv = document.createElement('div');
 
-    testHeader.innerText = 'test';
+    infoNav.id = 'infoNav';
+    infoListDiv.id = 'infoListDiv';
 
     target.append(infoNav);
-    infoNav.append(testHeader);
+    infoNav.append(infoListDiv);
 
-    // const infoDivId = ['infoNav', 'listDiv'];
-    // for (let i = 0; i < infoDivId.length; i++) {
-    //     const welcomeDiv = document.createElement('div');
-    //     target.append(welcomeDiv);
-    //     welcomeDiv.id = welcomeDivId[i];
+    for (let i = 0; i < infoDivContent.length; i++) {
+        const ul = document.createElement(infoDivContent[0]);
+        ul.id = 'infoListUl';
+        if (i === 0) {
+            infoListDiv.append(ul);
 
-    //     if (i === 0) {
-    //         welcomeImageContent();
-    //     } else {
-    //         welcomeButtonContent();
-    //     }
-    // }
+            for (let j = 0; j < 3; j++) {
+                switch (j) {
+                    case 0:
+                        const li0 = document.createElement(infoDivContent[1]);
+                        li0.id = ulId[j];
+                        ul.append(li0);
+                        break;
+                    case 1:
+                        const li1 = document.createElement(infoDivContent[1]);
+                        li1.id = ulId[j];
+                        ul.append(li1);
+                        break;
+                    case 2:
+                        const li2 = document.createElement(infoDivContent[1]);
+                        li2.id = ulId[j];
+                        ul.append(li2);
+                        break;
+                }
+                console.log(`Dit werkt!`);
+            }
+        }
+    }
 };
 
 // creates html tags and calls function to further add content to tags

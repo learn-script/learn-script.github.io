@@ -11,9 +11,9 @@ body {
 header {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     /* color: #fff; */
-    padding-top: 80px;
+    /* padding-top: 80px; */
 }
 
 #banner {
@@ -29,13 +29,14 @@ header {
     gap: 80px;
     width: 1000px;
     margin: 0 auto;
-    padding: 50px 0;
-    /* flex-grow: 1; */
+    padding: 48px 0;
+    flex-grow: 1;
 }
 
 #info {
     display: flex;
     height: 80px;
+    justify-content: center;
 }
 
 #bannerNav {

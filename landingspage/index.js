@@ -1,6 +1,16 @@
+const createElement = (tag, props = {}) => {
+    let el = Object.assign(document.createElement(tag), props);
+    if (props.attrs) {
+        Object.keys(props.attrs).forEach(key => el.setAttribute(key, props.attrs[key]))
+    }
+    delete props.attrs;
+    return el;
+}
+
 const app = document.querySelector('#app');
-const root = document.createElement('div');
-root.id = 'root';
+const root = createElement('div', {
+    id: "root"
+});
 app.append(root);
 
 // adds content to target elements
@@ -10,57 +20,76 @@ const bannerContent = (content, target) => {
         console.log(`Elements in bannerContent :${element}`);
         // banner content img
         if (element === 'img' && target.id === 'bannerNav') {
-            const content = document.createElement(element);
-            target.append(content);
+            target.append(createElement(element));
             const img = document.querySelector('#banner img');
             img.setAttribute('src', 'roads-technology.png');
             img.id = 'roadsImg';
             // banner content button
         } else if (element === 'div' && target.id === 'bannerNav') {
-            const content = document.createElement(element);
-            target.append(content);
+            const navContent = ['label', 'button', 'p'];
+
+            target.append(createElement(element));
             const buttonWrapper = document.querySelector('#banner div');
-            buttonWrapper.append(document.createElement('button'));
             buttonWrapper.id = 'buttonWrapper';
-            const button = document.querySelector('#buttonWrapper button');
-            button.id = 'menuButton';
-            button.innerText = 'Menu';
+
+            let button, hideMenu;
+            buttonWrapper.append(
+                button = createElement('button', {
+                    id: 'menuButton',
+                    innerText: 'Menu'
+                }),
+                hideMenu = createElement('p', {
+                    id: 'menu'
+                })
+            );
         }
     });
-
 };
 
 const welcomeImageContent = () => {
     const imageDiv = document.querySelector('#image');
-    const placeholder = document.createElement('img');
-    placeholder.id = 'placeholder';
-    imageDiv.append(placeholder);
-    placeholder.setAttribute('src', 'placeholder.png');
+
+    // const placeholder = imageDiv.appendChild(createElement('img', {
+    //     id : 'placeholder'
+    // }));
+    // placeholder.setAttribute('src', 'placeholder.png');
+    imageDiv.appendChild(createElement('img', {
+        id: 'placeholder',
+        attrs: {
+            src: 'placeholder.png'
+        }
+    }))//.setAttribute('src', 'placeholder.png');
+
     console.log('dit werkt!');
 };
 
 const welcomeButtonContent = () => {
-    const buttonsDiv = document.querySelector('#buttons');
-    const buttonText = document.createElement('h1');
-    const wrapper = document.createElement('div');
-    const welcomeButton = document.createElement('button');
+    const wrapper = createElement('div', {
+        id: 'textButtonWrapper'
+    });
 
-    buttonText.innerText = 'Deze text moet nog aangepast worden!';
-    buttonText.id = 'buttonText';
-    wrapper.id = 'textButtonWrapper';
-    welcomeButton.innerText = 'Begin';
+    document
+        .querySelector('#buttons')
+        .append(
+            createElement('h1', {
+                id: 'buttonText',
+                innerText: 'Deze text moet nog aangepast worden!'
+            }),
+            wrapper);
 
-    buttonsDiv.append(buttonText, wrapper);
-    wrapper.append(welcomeButton);
+    wrapper.append(
+        createElement('button', {
+            innerText: 'Begin'
+        }));
     console.log('dit werkt ook!');
 };
 
 const welcomeContent = (target) => {
     const welcomeDivId = ['image', 'buttons'];
     for (let i = 0; i < welcomeDivId.length; i++) {
-        const welcomeDiv = document.createElement('div');
-        target.append(welcomeDiv);
-        welcomeDiv.id = welcomeDivId[i];
+        target.append(createElement('div', {
+            id: welcomeDivId[i],
+        }));
 
         if (i === 0) {
             welcomeImageContent();
@@ -73,14 +102,17 @@ const welcomeContent = (target) => {
 const infoContent = (target) => {
     const infoDivContent = ['ul', 'li'];
     const ulId = ['Intranet', 'MDN', 'W3schools'];
-    const infoNav = document.createElement('nav');
-    const infoListDiv = document.createElement('div');
-
-    infoNav.id = 'infoNav';
-    infoListDiv.id = 'infoListDiv';
+    
+    const infoNav = createElement('nav', {
+        id : 'infoNav'
+    }); 
 
     target.append(infoNav);
-    infoNav.append(infoListDiv);
+    
+    infoNav.append(
+        createElement('div', {
+        id : 'infoListDiv'
+    }));
 
     for (let i = 0; i < infoDivContent.length; i++) {
         const ul = document.createElement(infoDivContent[0]);
@@ -89,23 +121,9 @@ const infoContent = (target) => {
             infoListDiv.append(ul);
 
             for (let j = 0; j < 3; j++) {
-                switch (j) {
-                    case 0:
-                        const li0 = document.createElement(infoDivContent[1]);
-                        li0.id = ulId[j];
-                        ul.append(li0);
-                        break;
-                    case 1:
-                        const li1 = document.createElement(infoDivContent[1]);
-                        li1.id = ulId[j];
-                        ul.append(li1);
-                        break;
-                    case 2:
-                        const li2 = document.createElement(infoDivContent[1]);
-                        li2.id = ulId[j];
-                        ul.append(li2);
-                        break;
-                }
+                let content = document.createElement(infoDivContent[1]);
+                content.id = ulId[j];
+                ul.append(content);
                 console.log(`Dit werkt!`);
             }
         }
@@ -129,29 +147,29 @@ const createStructure = () => {
 const headerStructure = (header) => {
     const headerIDs = ['banner', 'welcome', 'info'];
     const bannerElements = ['img', 'div'];
-    const newNav = document.createElement('nav');
 
     headerIDs.forEach(headerID => {
-        const newDiv = document.createElement('div');
-        newDiv.id = headerID;
+        const newDiv = createElement('div', {
+            id: headerID
+        });
 
+        header.append(newDiv);
         switch (headerID) {
             case 'banner':
-                header.append(newDiv);
-                newDiv.append(newNav);
-                newNav.id = 'bannerNav';
-                const bannerTarget = document.querySelector('#bannerNav');
-                console.log(bannerTarget);
+                let bannerTarget;
+                newDiv.append(
+                    bannerTarget = createElement('nav', {
+                        id: 'bannerNav'
+                    }));
+                console.log("%c bannerTarget ", "background:gold", bannerTarget);
                 bannerContent(bannerElements, bannerTarget);
                 break;
             case 'welcome':
-                header.append(newDiv);
                 const welcomeTarget = document.querySelector('#welcome');
                 welcomeContent(welcomeTarget);
                 console.log(welcomeTarget);
                 break;
             case 'info':
-                header.append(newDiv);
                 const infoTarget = document.querySelector('#info');
                 infoContent(infoTarget);
                 break;

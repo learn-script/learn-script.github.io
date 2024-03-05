@@ -2,6 +2,10 @@
     box-sizing: inherit;
 }
 
+#root {
+    /* display: flex; */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,8 +16,6 @@ header {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* color: #fff; */
-    /* padding-top: 80px; */
 }
 
 #banner {
@@ -30,7 +32,7 @@ header {
     width: 1000px;
     margin: 0 auto;
     padding: 48px 0;
-    flex-grow: 1;
+    flex: 1;
 }
 
 #info {
@@ -48,9 +50,20 @@ header {
     height: 80px;
 }
 
+#menu {
+    display: none;
+}
+
+#menuButton:hover + #menu {
+    display: block;
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+}
+
 #placeholder {
     max-width: 424px;
-    max-height: 500px; 
+    /* max-height: 500px;  */
 }
 
 #image {

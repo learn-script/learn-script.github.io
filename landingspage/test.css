@@ -54,12 +54,11 @@ header {
     display: none;
 }
 
-#menuButton:hover + #menu {
-    display: block;
+#buttonWrapper:hover + #menu {
+    display: flex;
     background-color: grey;
-    margin-top: 600px;
-    width: 450px;
-    height: 600px;
+    width: 10px;
+    height: 10px;
 }
 
 #placeholder {
@@ -92,4 +91,5 @@ header {
     display:block;
     width: 350px;
     height: 40px;
+    
 }

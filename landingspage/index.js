@@ -30,6 +30,7 @@ const bannerContent = (content, target) => {
 
             target.append(createElement(element));
             const buttonWrapper = document.querySelector('#banner div');
+            const bannerid = document.querySelector('#bannerNav');
             buttonWrapper.id = 'buttonWrapper';
 
             let button, hideMenu;
@@ -37,17 +38,18 @@ const bannerContent = (content, target) => {
                 button = createElement('button', {
                     id: 'menuButton',
                     // innerText: 'Menu',
-                }),
-                hideMenu = createElement('p', {
-                    id: 'menu'
                 }));
-
+                
             button.append(
                 span = createElement('span', {
                     id: 'buttonText',
                     innerText: 'Onderwerpen'
-                })
-            )
+                }));
+
+            bannerid.append(
+                hideMenu = createElement('p', {
+                    id: 'menu'
+                }));
             
         };
     });

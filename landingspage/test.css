@@ -56,9 +56,10 @@ header {
 
 #menuButton:hover + #menu {
     display: block;
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
+    background-color: grey;
+    margin-top: 600px;
+    width: 450px;
+    height: 600px;
 }
 
 #placeholder {
@@ -88,6 +89,7 @@ header {
 }
 
 #textButtonWrapper button {
+    display:block;
     width: 350px;
     height: 40px;
 }

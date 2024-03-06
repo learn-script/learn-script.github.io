@@ -36,13 +36,20 @@ const bannerContent = (content, target) => {
             buttonWrapper.append(
                 button = createElement('button', {
                     id: 'menuButton',
-                    innerText: 'Menu'
+                    // innerText: 'Menu',
                 }),
                 hideMenu = createElement('p', {
                     id: 'menu'
+                }));
+
+            button.append(
+                span = createElement('span', {
+                    id: 'buttonText',
+                    innerText: 'Onderwerpen'
                 })
-            );
-        }
+            )
+            
+        };
     });
 };
 

@@ -52,18 +52,19 @@ header {
 
 #menu {
     display: none;
+    position: fixed;
+    background-color: grey;
+    right: 25%;
+    width: 400px;
+    height: 550px;
 }
 
-#buttonWrapper:hover + #menu {
-    display: flex;
-    background-color: grey;
-    width: 10px;
-    height: 10px;
+#buttonWrapper:hover #menu {
+    display: block;
 }
 
 #placeholder {
     max-width: 424px;
-    /* max-height: 500px;  */
 }
 
 #image {

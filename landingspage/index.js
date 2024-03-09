@@ -1,11 +1,11 @@
 const createElement = (tag, props = {}) => {
     let el = Object.assign(document.createElement(tag), props);
     if (props.attrs) {
-        Object.keys(props.attrs).forEach(key => el.setAttribute(key, props.attrs[key]))
+        Object.keys(props.attrs).forEach(key => el.setAttribute(key, props.attrs[key]));
     }
     delete props.attrs;
     return el;
-}
+};
 
 const app = document.querySelector('#app');
 const root = createElement('div', {
@@ -39,25 +39,25 @@ const bannerContent = (content, target) => {
                     id: 'menuButton',
                     // innerText: 'Menu',
                 }));
-                
+
             button.append(
                 span = createElement('span', {
                     id: 'buttonText',
                     innerText: 'Onderwerpen'
                 }));
 
-            bannerid.append(
+            buttonWrapper.append(
                 hideMenu = createElement('p', {
                     id: 'menu'
                 }));
-            
+
         };
     });
 };
 
 const welcomeImageContent = () => {
     const imageDiv = document.querySelector('#image');
-
+    // laat verschil zien tussen document.createElement en de helper functie
     // const placeholder = imageDiv.appendChild(createElement('img', {
     //     id : 'placeholder'
     // }));
@@ -111,27 +111,29 @@ const welcomeContent = (target) => {
 const infoContent = (target) => {
     const infoDivContent = ['ul', 'li'];
     const ulId = ['Intranet', 'MDN', 'W3schools'];
-    
+
     const infoNav = createElement('nav', {
-        id : 'infoNav'
-    }); 
+        id: 'infoNav'
+    });
 
     target.append(infoNav);
-    
+
     infoNav.append(
         createElement('div', {
-        id : 'infoListDiv'
-    }));
+            id: 'infoListDiv'
+        }));
 
     for (let i = 0; i < infoDivContent.length; i++) {
-        const ul = document.createElement(infoDivContent[0]);
-        ul.id = 'infoListUl';
+        const ul = createElement(infoDivContent[0], {
+            id: 'infoListUl'
+        });
         if (i === 0) {
             infoListDiv.append(ul);
 
             for (let j = 0; j < 3; j++) {
-                let content = document.createElement(infoDivContent[1]);
-                content.id = ulId[j];
+                let content = createElement(infoDivContent[1], {
+                    id : ulId[j]
+                });
                 ul.append(content);
                 console.log(`Dit werkt!`);
             }
@@ -143,7 +145,7 @@ const infoContent = (target) => {
 const createStructure = () => {
     const elements = ['header', 'main', 'footer'];
     for (const element of elements) {
-        const newElement = document.createElement(element);
+        const newElement = createElement(element);
         root.append(newElement);
         if (element === 'header') {
             headerStructure(newElement);

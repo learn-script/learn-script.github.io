@@ -22,3 +22,6 @@
 ################################
 Wat ziet de gebruiker voor het eerst?
 Wat gaan we als eerste leren?
+
+Clamp() css 
+ff onthouden
